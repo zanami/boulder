@@ -1,10 +1,10 @@
-name = Lightning
+name = Boulder
 description = A fast and feature-rich Drupal distribution.
 core = 7.x
-distribution_name = Lightning
+distribution_name = Boulder
 exclusive = 1
 
-; Lightning
+; Boulder via Lightning
 dependencies[] = assemble
 dependencies[] = curate
 dependencies[] = distro_update

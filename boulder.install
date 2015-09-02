@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Install, update and uninstall functions for Lightning.
+ * Install, update and uninstall functions for Boulder.
  */
 
 /**
@@ -11,11 +11,11 @@
  *
  * @see system_install()
  */
-function lightning_install() {
+function boulder_install() {
   // Enable default theme.
-  $theme = 'lightningdemo';
-  theme_enable(array($theme));
-  variable_set('theme_default', $theme);
+#  $theme = 'lightningdemo';
+#  theme_enable(array($theme));
+#  variable_set('theme_default', $theme);
 
   // Enable admin theme.
   $admin_theme = 'ember';
@@ -26,7 +26,7 @@ function lightning_install() {
   variable_set('node_admin_theme', '1');
 
   // Disable bartik and seven.
-  theme_disable(array('bartik', 'seven'));
+#  theme_disable(array('bartik', 'seven'));
 
   // Enable some standard blocks.
   $default_theme = variable_get('theme_default', $theme);
@@ -84,8 +84,8 @@ function lightning_install() {
   variable_set('user_picture_file_size', '800');
   variable_set('user_picture_style', 'thumbnail');
 
-  // Allow visitor account creation with administrative approval.
-  variable_set('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL);
+  // Only admins can create users.
+  variable_set('user_register', USER_REGISTER_ADMINISTRATORS_ONLY);
 
   // Enable default permissions for system roles.
   user_role_grant_permissions(DRUPAL_ANONYMOUS_RID, array('access content', 'access comments'));
@@ -110,7 +110,7 @@ function lightning_install() {
 /**
  * Implements hook_install_tasks_alter().
  */
-function lightning_install_tasks_alter(&$tasks, $install_state) {
+function boulder_install_tasks_alter(&$tasks, $install_state) {
   global $install_state;
 
   // Skip language selection install step and default language to English.
@@ -125,7 +125,7 @@ function lightning_install_tasks_alter(&$tasks, $install_state) {
 /**
  * Override of install_finished().
  */
-function lightning_install_finished(&$install_state) {
+function boulder_install_finished(&$install_state) {
   // Flush all caches to ensure that any full bootstraps during the installer
   // do not leave stale cached data, and that any content types or other items
   // registered by the installation profile are registered correctly.
@@ -172,7 +172,7 @@ function lightning_install_finished(&$install_state) {
   }
   else {
     // Display a success message for Drush-based install.
-    drupal_set_message("Lightning install complete.");
+    drupal_set_message("Boulder install complete.");
   }
 }
 
