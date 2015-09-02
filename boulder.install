@@ -119,7 +119,7 @@ function boulder_install_tasks_alter(&$tasks, $install_state) {
   $install_state['parameters']['locale'] = 'en';
 
   // Override "install_finished" task.
-  $tasks['install_finished']['function'] = 'lightning_install_finished';
+  $tasks['install_finished']['function'] = 'boulder_install_finished';
 }
 
 /**
