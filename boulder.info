@@ -10,8 +10,10 @@ exclusive = 1
 ; dependencies[] = assemble
 ; dependencies[] = curate
 dependencies[] = distro_update
+dependencies[] = lightning_roles
 dependencies[] = lightning_base
 dependencies[] = lightning_admin
+
 
 ; System Requirements
 php = 5.4
