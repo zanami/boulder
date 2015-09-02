@@ -5,8 +5,10 @@ distribution_name = Boulder
 exclusive = 1
 
 ; Boulder via Lightning
-dependencies[] = assemble
-dependencies[] = curate
+; Remove explicit dependencies from profile
+; to move them to a site-specific somesite_assemble module.
+; dependencies[] = assemble
+; dependencies[] = curate
 dependencies[] = distro_update
 
 ; System Requirements
