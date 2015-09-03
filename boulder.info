@@ -9,15 +9,7 @@ exclusive = 1
 ; to move them to a site-specific somesite_assemble module.
 ; dependencies[] = assemble
 ; dependencies[] = curate
-dependencies[] = distro_update
-dependencies[] = lightning_roles
-dependencies[] = lightning_base
-dependencies[] = lightning_admin
-dependencies[] = lightning_metatags
-dependencies[] = lightning_blocks
-dependencies[] = lightning_views
-dependencies[] = lightning_forms
-
+dependencies[] = boulder_basic
 
 
 ; System Requirements
